@@ -52,6 +52,6 @@ class HpinsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def hpin_params
-      params.require(:hpin).permit(:description)
+      params.require(:hpin).permit(:description, :image)
     end
 end
