@@ -5,5 +5,7 @@
   <%= @hpin.description %>
 </p>
 
+<% if @hpin.user == current_user %>
 <%= link_to 'Edit', edit_hpin_path(@hpin) %> |
+<% end %>
 <%= link_to 'Back', hpins_path %>
