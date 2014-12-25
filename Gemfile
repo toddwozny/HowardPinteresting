@@ -20,7 +20,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
+
 gem 'devise', '~> 3.2.3'
+gem 'paperclip', '~> 3.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
