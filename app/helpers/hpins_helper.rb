@@ -1,0 +1,2 @@
+module HpinsHelper
+end
