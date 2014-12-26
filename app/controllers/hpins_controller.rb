@@ -18,7 +18,7 @@ class HpinsController < ApplicationController
   end
 
   def create
-    @hpin = current_user.hpins.build(hpin_params)
+    @hpin = Hpin.new(hpin_params)
     if @hpin.save
         redirect_to @hpin, notice: 'Pin was successfully created.' 
       else
