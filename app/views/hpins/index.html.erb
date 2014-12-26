@@ -1,32 +1,14 @@
-<h1>Listing hpins</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hpins.each do |hpin| %>
-      <tr>
-        <td><%= image_tag hpin.image.url(:medium) %></td>
-        <td><%= hpin.description %></td>
-        <td><%= hpin.user.email if hpin.user %></td>
-        <td><%= link_to 'Show', hpin %></td>
-        <% if hpin.user == current_user %>
-          <td><%= link_to 'Edit', edit_hpin_path(hpin) %></td>
-          <td><%= link_to 'Destroy', hpin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<% if user_signed_in? %>
-  <%= link_to 'New Hpin', new_hpin_path %>
-<% end %>
+  <div id="pins" class="transitions-enabled">
+  <% @hpins.each do |hpin| %>   
+  <div class="box panel panel-default">
+      <%= image_tag hpin.image.url(:medium) %>
+      <div class="panel-body">
+      <%= hpin.description %>
+      <%= hpin.user.email if hpin.user %>
+      <%= link_to 'Show', hpin %>       
+        <%= link_to 'Edit', edit_hpin_path(hpin) %>
+        <%= link_to 'Destroy', hpin, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+  </div>
+  <% end %>
+</div>
