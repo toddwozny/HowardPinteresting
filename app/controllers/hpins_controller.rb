@@ -11,7 +11,7 @@ class HpinsController < ApplicationController
   end
  
   def new
-    @hpin = current_user.hpins.build  
+    @hpin = Hpin.new  
   end
  
   def edit
