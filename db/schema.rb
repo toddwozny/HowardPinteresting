@@ -31,16 +31,6 @@ ActiveRecord::Schema.define(version: 20141226020151) do
     t.datetime "updated_at"
   end
 
-  create_table "pins", force: true do |t|
-    t.string   "description"
-    t.string   "string"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  add_index "pins", ["user_id"], name: "index_pins_on_user_id"
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
