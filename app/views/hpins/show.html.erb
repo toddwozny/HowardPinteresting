@@ -1,12 +1,26 @@
-<p id="notice"><%= notice %></p>
-<%= image_tag @hpin.image.url(:medium) %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @hpin.description %>
-</p>
-
-<% if @hpin.user == current_user %>
-<%= link_to 'Edit', edit_hpin_path(@hpin) %> |
-<% end %>
 <%= link_to 'Back', hpins_path %>
+
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+				<%= image_tag @hpin.image.url(:medium) %>
+			</div>
+			<div class="panel-body">
+			<p><%= @hpin.description %></p>
+			<p><strong><%= @hpin.user.email if @hpin.user %></strong></p>
+				<%= link_to 'Edit', edit_hpin_path(@hpin) %> 
+			</div>
+   </div>
+  </div>
+</div>
+
+
+
+
+       
+      
+
+        
+     

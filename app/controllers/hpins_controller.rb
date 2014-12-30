@@ -47,8 +47,8 @@ class HpinsController < ApplicationController
     end
 
     def correct_user
-      @hpin = current_user.hpins.find_by(id: params[:id])
-      redirect_to hpins_path, notice: "Not authorized to edit this pin" if @hpin.nil?
+     # @hpin = current_user.hpins.find_by(id: params[:id])
+      #redirect_to hpins_path, notice: "Not authorized to edit this pin" if @hpin.nil?
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def hpin_params

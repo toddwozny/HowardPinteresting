@@ -1,14 +1,15 @@
-  <div id="pins" class="transitions-enabled">
+ <div id="pins" class="transitions-enabled">
   <% @hpins.each do |hpin| %>   
   <div class="box panel panel-default">
-      <%= image_tag hpin.image.url(:medium) %>
+      <%= link_to image_tag(hpin.image.url(:medium)), hpin %>
       <div class="panel-body">
-      <%= hpin.description %>
-      <%= hpin.user.email if hpin.user %>
-      <%= link_to 'Show', hpin %>       
-        <%= link_to 'Edit', edit_hpin_path(hpin) %>
-        <%= link_to 'Destroy', hpin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <p><%= hpin.description %></p>
+        <p><strong><%= hpin.user.email if hpin.user %></strong></p>
+         <div class="actions">
+          <%= link_to 'Edit', edit_hpin_path(hpin) %>
+          <%= link_to 'Destroy', hpin, method: :delete, data: { confirm: 'Are you sure?' } %>
+         </div>
       </div>
   </div>
   <% end %>
-</div>
+ </div>
